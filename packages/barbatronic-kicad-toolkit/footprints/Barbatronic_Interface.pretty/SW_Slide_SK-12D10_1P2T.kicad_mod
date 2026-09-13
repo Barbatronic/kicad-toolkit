@@ -16,7 +16,7 @@
   (pad "1" thru_hole rect (at -5 0) (size 2.5 2.5) (drill 1.5) (layers *.Cu *.Mask) (tstamp 33e40dd5-556d-4de0-ab08-235c61b7ba9f))
   (pad "2" thru_hole circle (at 0 0) (size 2.5 2.5) (drill 1.5) (layers *.Cu *.Mask) (tstamp 914a2046-646f-4d53-b355-ce2139e25907))
   (pad "3" thru_hole circle (at 5 0) (size 2.5 2.5) (drill 1.5) (layers *.Cu *.Mask) (tstamp 1c7ec62e-d96c-4a0d-ac32-e919b90a3c5b))
-  (model "${KICAD9_3RD_PARTY}/3dmodels/com_github_barbatronic_kicad-toolkit/Barbatronic.3dshapes/SW_Slide_SK-12D10_1P2T.step"
+  (model "${KICAD10_3RD_PARTY}/3dmodels/com_github_barbatronic_kicad-toolkit/Barbatronic.3dshapes/SW_Slide_SK-12D10_1P2T.step"
     (offset (xyz 0 0 0))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 0))

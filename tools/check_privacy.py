@@ -20,8 +20,10 @@ PATTERNS = [
      re.compile(r"/(?:home|Users)/[A-Za-z0-9._-]+")),
     ("chemin personnel Windows",
      re.compile(r"[A-Za-z]:[\\/]+Users[\\/]+[A-Za-z0-9._-]+", re.IGNORECASE)),
+    # un numéro écrit d'un seul tenant se confond avec une référence de pièce :
+    # on exige des séparateurs pour ne signaler que ce qui ressemble à un numéro
     ("numéro de téléphone français",
-     re.compile(r"(?:(?<=\s)|^)(?:\+33|0)\s?[1-9](?:[\s.-]?\d{2}){4}(?=\s|$)")),
+     re.compile(r"(?:(?<=\s)|^)(?:\+33|0)[\s.-][1-9](?:[\s.-]\d{2}){4}(?=\s|$)")),
     ("jeton ou clé d'API",
      re.compile(r"(?:ghp_[A-Za-z0-9]{36}|gh[pousr]_[A-Za-z0-9]{20,}|"
                 r"AKIA[0-9A-Z]{16}|sk-[A-Za-z0-9]{32,})")),
@@ -75,6 +77,10 @@ def main():
                 for m in pat.finditer(line):
                     allow = ALLOWED.get(label)
                     if allow and allow.match(m.group(0)):
+                        continue
+                    # un chemin dans une URL http est celui d'un serveur, pas d'une machine
+                    if label == "chemin personnel Unix" and re.search(
+                            r"https?://[^\s\"']*$", line[:m.start()]):
                         continue
                     findings.append((rel, lineno, label, m.group(0)))
             low = line.lower()

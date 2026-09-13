@@ -12,7 +12,7 @@ SYMBOL_DIRS = [
 ]
 
 # Version des librairies officielles utilisee quand il faut les telecharger.
-SYMBOL_LIB_TAG = "9.0.0"
+SYMBOL_LIB_TAG = "10.0.6"
 SYMBOL_LIB_URL = ("https://gitlab.com/kicad/libraries/kicad-symbols/-/raw/"
                   + SYMBOL_LIB_TAG + "/{lib}.kicad_sym")
 DOWNLOAD_DIR = os.path.expanduser("~/.cache/barbatronic-kicad-toolkit/symbols")
@@ -377,3 +377,27 @@ class Schematic:
 	(embedded_fonts no)
 )
 '''
+
+
+# Jetons introduits par le format KiCad 10 et ignores par KiCad 9.
+KICAD10_ONLY = ("in_pos_files", "duplicate_pin_numbers_are_jumpers",
+                "show_name", "do_not_autoplace", "exclude_from_bom",
+                "jumper_pin_group")
+
+def to_kicad9(text):
+    """Retire les listes propres au format KiCad 10 pour rester lisible par KiCad 9."""
+    cuts = []
+    for d, s, e in _scan(text):
+        m = re.match(r'\(\s*([a-z_0-9]+)', text[s:e])
+        if m and m.group(1) in KICAD10_ONLY:
+            cuts.append((s, e))
+    cuts.sort(reverse=True)
+    for s, e in cuts:
+        # avale l'indentation et le saut de ligne qui precedent
+        p = s
+        while p > 0 and text[p - 1] in " \t":
+            p -= 1
+        if p > 0 and text[p - 1] == "\n":
+            p -= 1
+        text = text[:p] + text[e:]
+    return text

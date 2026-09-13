@@ -68,6 +68,10 @@ sans avertissement.
 Un symbole ou une empreinte qui existe déjà dans les librairies officielles de
 KiCad n'a pas sa place ici.
 
+Pour une librairie tierce, la place est dans `packages/barbatronic-kicad-thirdparty/`,
+avec une ligne dans `resources/licenses/NOTICE.md` indiquant l'auteur d'origine, la
+licence et ce que j'ai modifié.
+
 ## Ajouter un bloc de conception
 
 Les blocs sont produits par un script, pour rester cohérents et reproductibles.
@@ -105,10 +109,25 @@ contenu peut proposer une version antérieure si besoin.
 ## Construire en local
 
 ```bash
-python3 tools/build_pcm.py --version 1.1.0     # archives et dépôt dans dist/
-python3 tools/make_gallery.py                  # catalogue, nécessite kicad-cli
-python3 tools/check_privacy.py                 # recherche de données personnelles
+python3 tools/build_pcm.py --version 1.1.0   # archives et dépôt dans dist/
+python3 tools/valider_pcm.py                 # validation contre le schéma officiel
+python3 tools/make_gallery.py                # catalogue illustré, nécessite kicad-cli
+python3 tools/make_design_blocks.py          # régénère les blocs de conception
+python3 tools/check_privacy.py               # recherche de données personnelles
 ```
+
+Deux scripts ne servent qu'à la reprise de fichiers venus d'ailleurs :
+
+```bash
+PROJETS=~/Documents/GitHub python3 tools/collect_thirdparty.py  # réimporte les librairies tierces
+python3 tools/fix_3d_paths.py                                   # normalise les références de modèles 3D
+```
+
+`fix_3d_paths.py` est à relancer après toute reprise d'empreinte venant d'un
+projet : il redirige les modèles 3D fournis par le paquet, laisse ceux des
+librairies officielles de KiCad et retire les chemins morts. Sans lui, une
+empreinte peut publier l'arborescence de la machine sur laquelle elle a été faite,
+ce qui est déjà arrivé.
 
 ## Prévisualiser la documentation en local
 

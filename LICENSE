@@ -26,5 +26,11 @@ Le paquet barbatronic-kicad-thirdparty redistribue des librairies tierces qui ne
 sont pas couvertes par cette licence. Chacune conserve la sienne, reproduite dans
 le dossier resources/licenses du paquet :
 
-- ThirdParty_SparkFun_RF : SparkFun Electronics, Creative Commons Attribution 4.0
-- ThirdParty_Teensy      : Ricardo Band, MIT
+- ThirdParty_SparkFun_RF   : SparkFun Electronics, Creative Commons Attribution 4.0
+- ThirdParty_SparkFun      : SparkFun Electronics, via SnapEDA
+- ThirdParty_Teensy        : Ricardo Band, MIT
+- ThirdParty_Digikey       : Digi-Key Electronics, CC BY-SA 4.0
+- ThirdParty_Seeed_XIAO    : Seeed Studio, licence non precisee
+- ThirdParty_TMC_StepStick : via SnapEDA
+- ThirdParty_DFRobot       : DFRobot, via SnapEDA
+- ThirdParty_Arduino       : projet KiCad, CC BY-SA 4.0 avec exception

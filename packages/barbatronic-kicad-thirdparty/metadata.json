@@ -1,23 +1,39 @@
 {
   "$schema": "https://go.kicad.org/pcm/schemas/v1",
   "name": "Barbatronic Toolkit - librairies tierces",
-  "description": "Librairies tierces que j'utilise régulièrement, redistribuées sous leur licence d'origine",
-  "description_full": "Complément au Barbatronic Toolkit. Rassemble les librairies que je n'ai pas créées mais qui reviennent dans mes cartes, redistribuées telles quelles sous leur licence d'origine : les empreintes RF de SparkFun (CC BY 4.0) et les empreintes Teensy de Ricardo Band (MIT).\n\nChaque licence est fournie dans le paquet. Les librairies dont la licence interdit la redistribution ne sont pas incluses, la documentation indique où les récupérer.",
+  "description": "Librairies tierces que j'utilise régulièrement, avec mes retouches, sous leur licence d'origine",
+  "description_full": "Complément au Barbatronic Toolkit. Rassemble les librairies que je n'ai pas créées mais qui reviennent dans mes cartes : SparkFun, Teensy, Digi-Key, Seeed Studio XIAO, les modules TMC SilentStepStick et DFRobot.\n\nPlusieurs de ces fichiers portent les retouches que j'y ai faites au fil des projets, notamment les variantes d'implantation des modules montés par en dessous. Ils ne sont donc pas toujours identiques aux fichiers publiés par leur auteur d'origine.\n\nChaque licence est fournie dans le paquet, avec le détail de la provenance de chaque librairie.",
   "identifier": "com.github.barbatronic.kicad-toolkit-thirdparty",
   "type": "library",
   "author": {
-    "name": "SparkFun Electronics, Ricardo Band",
-    "contact": { "web": "https://github.com/Barbatronic/kicad-toolkit" }
+    "name": "SparkFun Electronics, Digi-Key, Seeed Studio, Ricardo Band, DFRobot",
+    "contact": {
+      "web": "https://github.com/Barbatronic/kicad-toolkit"
+    }
   },
   "maintainer": {
     "name": "Barbatronic",
-    "contact": { "web": "https://github.com/Barbatronic/kicad-toolkit" }
+    "contact": {
+      "web": "https://github.com/Barbatronic/kicad-toolkit"
+    }
   },
-  "license": "CC-BY-4.0",
+  "license": "CC-BY-SA-4.0",
   "resources": {
     "Documentation": "https://barbatronic.github.io/kicad-toolkit/librairies/tierces/",
     "Sources": "https://github.com/Barbatronic/kicad-toolkit"
   },
-  "tags": ["barbatronic", "sparkfun", "teensy", "rf", "xbee", "empreintes"],
+  "tags": [
+    "barbatronic",
+    "sparkfun",
+    "teensy",
+    "digikey",
+    "seeed",
+    "xiao",
+    "tmc",
+    "stepstick",
+    "dfrobot",
+    "empreintes",
+    "symboles"
+  ],
   "versions": []
 }

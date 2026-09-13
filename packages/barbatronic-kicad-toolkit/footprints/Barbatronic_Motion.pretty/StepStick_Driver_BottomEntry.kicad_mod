@@ -399,7 +399,7 @@
 		(thermal_bridge_angle 90)
 		(uuid "8a829357-739d-45ae-9d46-eb5b341efb14")
 	)
-	(model "${KICAD9_3RD_PARTY}/3dmodels/com_github_barbatronic_kicad-toolkit/Barbatronic.3dshapes/StepStick_Driver_BottomEntry.step"
+	(model "${KICAD10_3RD_PARTY}/3dmodels/com_github_barbatronic_kicad-toolkit/Barbatronic.3dshapes/StepStick_Driver_BottomEntry.step"
 		(offset
 			(xyz 0 0 0)
 		)

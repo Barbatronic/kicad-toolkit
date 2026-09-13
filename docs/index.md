@@ -22,7 +22,7 @@ dépôt met fin à cette recopie : une seule source, mise à jour depuis KiCad.
 | Paquet | Contenu |
 |---|---|
 | **Barbatronic Toolkit** | Symboles, empreintes et modèles 3D rangés par thème, blocs de conception, cartouche, règles de conception par fabricant, modèle de projet |
-| **Librairies tierces** | Empreintes RF SparkFun et Teensy, redistribuées sous leur licence d'origine |
+| **Librairies tierces** | SparkFun, Teensy, Digi-Key, Seeed XIAO, TMC SilentStepStick et DFRobot, sous leur licence d'origine |
 | **Thème sombre** | Le thème de couleurs que j'utilise pour le schéma et le routage |
 
 Les trois s'installent séparément : rien n'oblige à tout prendre.
@@ -38,5 +38,6 @@ Les trois s'installent séparément : rien n'oblige à tout prendre.
 
 ## Compatibilité
 
-Le toolkit demande **KiCad 9.0 ou plus récent**. Les blocs de conception sont une
-nouveauté de KiCad 9 et ne sont pas visibles sur les versions antérieures.
+Le toolkit demande **KiCad 10.0 ou plus récent**. Les chemins des modèles 3D et des
+ressources reposent sur la variable `KICAD10_3RD_PARTY`, qui n'existe pas sur les
+versions antérieures.

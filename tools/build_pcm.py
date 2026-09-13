@@ -95,7 +95,7 @@ def main():
     ap.add_argument("--version", required=True, help="version des paquets, par exemple 1.0.0")
     ap.add_argument("--status", default="stable",
                     choices=["stable", "testing", "development", "deprecated"])
-    ap.add_argument("--kicad-version", default="9.0", help="version minimale de KiCad")
+    ap.add_argument("--kicad-version", default="10.0", help="version minimale de KiCad")
     ap.add_argument("--base-url", default=DEFAULT_BASE, help="URL publique du depot")
     ap.add_argument("--download-base", default=DEFAULT_DOWNLOAD,
                     help="URL de base des archives, le tag est ajoute ensuite")

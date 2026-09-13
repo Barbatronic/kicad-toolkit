@@ -61,10 +61,10 @@ ajoutez une ligne :
 | Champ | Valeur |
 |---|---|
 | Nom | `Barbatronic` |
-| Chemin | `${KICAD9_3RD_PARTY}/resources/com_github_barbatronic_kicad-toolkit/design-blocks/Barbatronic.kicad_blocks` |
+| Chemin | `${KICAD10_3RD_PARTY}/resources/com_github_barbatronic_kicad-toolkit/design-blocks/Barbatronic.kicad_blocks` |
 | Format | KiCad |
 
-Sur KiCad 10, remplacez `KICAD9_3RD_PARTY` par `KICAD10_3RD_PARTY`.
+
 
 ### Le cartouche
 
@@ -72,7 +72,7 @@ Dans un projet, menu **Fichier**, **Configuration de la mise en page**, champ
 **Fichier de mise en page** :
 
 ```
-${KICAD9_3RD_PARTY}/resources/com_github_barbatronic_kicad-toolkit/worksheets/Barbatronic.kicad_wks
+${KICAD10_3RD_PARTY}/resources/com_github_barbatronic_kicad-toolkit/worksheets/Barbatronic.kicad_wks
 ```
 
 À faire une fois pour le schéma et une fois pour le circuit imprimé. Les projets
@@ -83,7 +83,7 @@ créés depuis le modèle de projet embarquent déjà leur propre copie du carto
 Copiez le fichier qui correspond à votre fabricant depuis
 
 ```
-${KICAD9_3RD_PARTY}/resources/com_github_barbatronic_kicad-toolkit/design-rules/
+${KICAD10_3RD_PARTY}/resources/com_github_barbatronic_kicad-toolkit/design-rules/
 ```
 
 vers votre projet, sous le nom `<nom du projet>.kicad_dru`. Voir la page

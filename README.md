@@ -25,14 +25,14 @@ Le détail, y compris les quelques éléments à activer à la main, est sur la
 | Paquet | Contenu |
 |---|---|
 | **Barbatronic Toolkit** | Symboles, empreintes et modèles 3D par thème, blocs de conception, cartouche, règles de conception, modèle de projet |
-| **Librairies tierces** | Empreintes RF SparkFun et Teensy, sous leur licence d'origine |
+| **Librairies tierces** | SparkFun, Teensy, Digi-Key, Seeed XIAO, TMC SilentStepStick, DFRobot, sous leur licence d'origine |
 | **Thème sombre** | Thème de couleurs pour le schéma et le routage |
 
 Les librairies sont rangées par usage : `Barbatronic_MCU`, `Barbatronic_Power`,
 `Barbatronic_Motion`, `Barbatronic_Sensors`, `Barbatronic_Connectors`,
 `Barbatronic_Interface`, `Barbatronic_Mechanical`.
 
-Compatible **KiCad 9.0 et plus récent**.
+Compatible **KiCad 10.0 et plus récent**.
 
 ## Organisation du dépôt
 
@@ -68,7 +68,6 @@ Mes symboles, empreintes, blocs et réglages sont sous licence MIT, voir
 [LICENSE](LICENSE).
 
 Les librairies tierces du paquet `barbatronic-kicad-thirdparty` gardent leur
-licence d'origine, reproduite dans le paquet :
-
-- Empreintes RF : SparkFun Electronics, CC BY 4.0
-- Empreintes Teensy : Ricardo Band, MIT
+licence d'origine, reproduite dans le paquet, et portent pour certaines mes
+retouches. Le détail de chaque provenance est sur la page
+[Librairies tierces](https://barbatronic.github.io/kicad-toolkit/librairies/tierces).

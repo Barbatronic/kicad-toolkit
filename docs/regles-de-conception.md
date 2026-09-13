@@ -33,7 +33,7 @@ KiCad lit les règles personnalisées dans un fichier portant le nom du projet.
 Copiez le jeu voulu à côté du circuit imprimé et renommez-le :
 
 ```bash
-cp "${KICAD9_3RD_PARTY}/resources/com_github_barbatronic_kicad-toolkit/design-rules/JLCPCB-2couches.kicad_dru" \
+cp "${KICAD10_3RD_PARTY}/resources/com_github_barbatronic_kicad-toolkit/design-rules/JLCPCB-2couches.kicad_dru" \
    ma-carte.kicad_dru
 ```
 

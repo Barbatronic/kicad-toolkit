@@ -185,7 +185,7 @@ def write_pages(symbols, footprints, blocks):
              "# Blocs de conception", "",
              "Des morceaux de schéma tout faits, à déposer dans une feuille plutôt "
              "qu'à redessiner à chaque carte.", "",
-             "{: .note }", "> Les blocs de conception demandent KiCad 9 ou plus récent.", ""]
+             "{: .note }", "> Les blocs de conception demandent KiCad 10 ou plus récent.", ""]
     for name, svg, descr, kw in blocks:
         lines += [f"## {name.replace('_', ' ')}", ""]
         if descr:
@@ -200,7 +200,7 @@ def write_pages(symbols, footprints, blocks):
 
 def main():
     if not KICAD_CLI:
-        sys.exit("kicad-cli est introuvable : installez KiCad 9 ou plus récent "
+        sys.exit("kicad-cli est introuvable : installez KiCad 10 ou plus récent "
                  "pour produire le catalogue.")
     if os.path.isdir(ASSETS):
         shutil.rmtree(ASSETS)

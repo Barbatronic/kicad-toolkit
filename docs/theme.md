@@ -32,7 +32,7 @@ Le thème est un simple fichier JSON. Copiez-le dans votre configuration KiCad p
 en faire une variante :
 
 ```bash
-cp "${KICAD9_3RD_PARTY}/colors/com_github_barbatronic_kicad-theme/Barbatronic.json" \
+cp "${KICAD10_3RD_PARTY}/colors/com_github_barbatronic_kicad-theme/Barbatronic.json" \
    ~/.config/kicad/9.0/colors/Barbatronic-perso.json
 ```
 

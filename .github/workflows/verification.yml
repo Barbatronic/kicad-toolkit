@@ -15,7 +15,7 @@ jobs:
 
       - name: Installer KiCad
         run: |
-          sudo add-apt-repository --yes ppa:kicad/kicad-9.0-releases
+          sudo add-apt-repository --yes ppa:kicad/kicad-10.0-releases
           sudo apt-get update
           sudo apt-get install --yes --no-install-recommends kicad kicad-symbols kicad-footprints
           kicad-cli version
