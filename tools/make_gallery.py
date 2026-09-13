@@ -125,6 +125,7 @@ THEMES = {
     "Connectors": "Connectique, alimentation et stockage",
     "Interface": "Interface : boutons, interrupteurs, voyants",
     "Mechanical": "Mécanique et repères de fabrication",
+    "Display": "Écrans",
 }
 
 

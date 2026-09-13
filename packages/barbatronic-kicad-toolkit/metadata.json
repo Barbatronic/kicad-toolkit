@@ -7,17 +7,32 @@
   "type": "library",
   "author": {
     "name": "Barbatronic",
-    "contact": { "web": "https://github.com/Barbatronic" }
+    "contact": {
+      "web": "https://github.com/Barbatronic"
+    }
   },
   "maintainer": {
     "name": "Barbatronic",
-    "contact": { "web": "https://github.com/Barbatronic/kicad-toolkit" }
+    "contact": {
+      "web": "https://github.com/Barbatronic/kicad-toolkit"
+    }
   },
   "license": "MIT",
   "resources": {
     "Documentation": "https://barbatronic.github.io/kicad-toolkit/",
     "Sources": "https://github.com/Barbatronic/kicad-toolkit"
   },
-  "tags": ["barbatronic", "robotique", "esp32", "moteur", "alimentation", "empreintes", "symboles", "blocs"],
+  "tags": [
+    "barbatronic",
+    "robotique",
+    "esp32",
+    "moteur",
+    "alimentation",
+    "empreintes",
+    "symboles",
+    "blocs",
+    "ecran",
+    "tft"
+  ],
   "versions": []
 }

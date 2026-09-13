@@ -30,7 +30,7 @@ Le détail, y compris les quelques éléments à activer à la main, est sur la
 
 Les librairies sont rangées par usage : `Barbatronic_MCU`, `Barbatronic_Power`,
 `Barbatronic_Motion`, `Barbatronic_Sensors`, `Barbatronic_Connectors`,
-`Barbatronic_Interface`, `Barbatronic_Mechanical`.
+`Barbatronic_Interface`, `Barbatronic_Mechanical`, `Barbatronic_Display`.
 
 Compatible **KiCad 10.0 et plus récent**.
 

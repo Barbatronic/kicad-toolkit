@@ -19,6 +19,7 @@ de la carte sur laquelle il a servi la première fois.
 | `Barbatronic_Connectors` | Connectique, alimentation et stockage |
 | `Barbatronic_Interface` | Boutons, interrupteurs, voyants |
 | `Barbatronic_Mechanical` | Mécanique et repères de fabrication |
+| `Barbatronic_Display` | Écrans |
 
 Dans KiCad, ces librairies apparaissent préfixées : `PCM_Barbatronic_MCU`, et ainsi
 de suite.
