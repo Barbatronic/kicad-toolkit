@@ -72,22 +72,25 @@ Pour une librairie tierce, la place est dans `packages/barbatronic-kicad-thirdpa
 avec une ligne dans `resources/licenses/NOTICE.md` indiquant l'auteur d'origine, la
 licence et ce que j'ai modifié.
 
-## Ajouter un bloc de conception
+## Ajouter ou modifier un bloc de conception
 
-Les blocs sont produits par un script, pour rester cohérents et reproductibles.
-Ajoutez une fonction dans `tools/make_design_blocks.py`, inscrivez-la dans la liste
-`BLOCS`, puis :
+Les six blocs actuels sont tenus à jour directement dans KiCad, pas par un
+script. Pour en modifier un, ouvrez son `.kicad_sch` (dans
+`packages/barbatronic-kicad-toolkit/resources/design-blocks/Barbatronic.kicad_blocks/`)
+dans l'éditeur de schéma, faites la modification, enregistrez. Pour un nouveau
+bloc, dessinez-le dans un schéma quelconque puis **Créer un bloc de conception
+à partir de la sélection**, et déplacez le dossier `.kicad_block` produit au
+même endroit.
 
-```bash
-python3 tools/make_design_blocks.py
-```
+Pensez à mettre à jour le `.json` du bloc (`description`, `keywords`) et le
+tableau de la page [Blocs de conception](../blocs) si le contenu change.
 
-Le script récupère au besoin les librairies de symboles officielles de KiCad dans
-`~/.cache/barbatronic-kicad-toolkit/`, il fonctionne donc même sans KiCad installé.
-
-Les blocs peuvent aussi être créés à la main depuis l'éditeur de schéma, par
-**Créer un bloc de conception à partir de la sélection**. Dans ce cas, le script
-n'est plus la source de vérité pour ce bloc.
+{: .note }
+> `tools/make_design_blocks.py` a servi à produire le premier jeu de blocs par
+> script, avant qu'ils ne soient repris à la main dans KiCad. Il refuse
+> maintenant de s'exécuter (`--force` pour passer outre) : le relancer sans
+> l'avoir remis à jour effacerait les modifications faites depuis dans KiCad.
+> Voir son en-tête si vous voulez un jour régénérer un bloc par script.
 
 ## Publier une version
 
@@ -112,15 +115,15 @@ contenu peut proposer une version antérieure si besoin.
 python3 tools/build_pcm.py --version 1.1.0   # archives et dépôt dans dist/
 python3 tools/valider_pcm.py                 # validation contre le schéma officiel
 python3 tools/make_gallery.py                # catalogue illustré, nécessite kicad-cli
-python3 tools/make_design_blocks.py          # régénère les blocs de conception
 python3 tools/check_privacy.py               # recherche de données personnelles
 ```
 
-Deux scripts ne servent qu'à la reprise de fichiers venus d'ailleurs :
+Trois scripts ne servent qu'à la reprise de fichiers venus d'ailleurs :
 
 ```bash
-PROJETS=~/Documents/GitHub python3 tools/collect_thirdparty.py  # réimporte les librairies tierces
-python3 tools/fix_3d_paths.py                                   # normalise les références de modèles 3D
+PROJETS=~/Documents/GitHub python3 tools/collect_symbols_footprints.py  # reconstruit les libs maison
+PROJETS=~/Documents/GitHub python3 tools/collect_thirdparty.py          # réimporte les librairies tierces
+python3 tools/fix_3d_paths.py                                           # normalise les références de modèles 3D
 ```
 
 `fix_3d_paths.py` est à relancer après toute reprise d'empreinte venant d'un

@@ -47,7 +47,6 @@ docs/         le site de documentation
 ```bash
 python3 tools/build_pcm.py --version 1.0.0   # archives et dépôt PCM dans dist/
 python3 tools/make_gallery.py                # catalogue illustré, nécessite kicad-cli
-python3 tools/make_design_blocks.py          # régénère les blocs de conception
 python3 tools/check_privacy.py               # vérifie l'absence de données personnelles
 ```
 

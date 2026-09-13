@@ -1,10 +1,22 @@
 #!/usr/bin/env python3
-"""Genere la librairie de blocs de conception Barbatronic.
+"""A produit le premier jeu de blocs de conception Barbatronic par script.
+
+ATTENTION : perime depuis que les blocs sont reprix et tenus a jour a la main
+dans l'editeur de schema de KiCad (voir docs/maintenance.md). La liste BLOCS
+ci-dessous ne reflete plus le contenu reel du dossier : "Entree_Alim_Protegee"
+a ete supprime, "Servos_x4" renomme et repense en "Servos", et un nouveau bloc
+"Regul_5V" est apparu sans equivalent ici. Relancer ce script sans le remettre
+a jour effacerait ces modifications (main() vide entierement le dossier de
+la librairie avant de le reconstruire).
+
+Conserve comme exemple de construction programmatique d'un bloc, et au cas ou
+il faille un jour regenerer un bloc par script plutot qu'a la main. Necessite
+--force pour s'executer, en connaissance de cause.
 
 Chaque bloc est un dossier <Nom>.kicad_block contenant <Nom>.kicad_sch et
 <Nom>.json, dans une librairie <Lib>.kicad_blocks, comme attendu par KiCad.
 """
-import json, os, shutil, sys
+import argparse, json, os, shutil, sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from kicad_sch import SymbolCache, Schematic
@@ -205,6 +217,17 @@ BLOCS = [bloc_alim_3v3, bloc_entree_alim, bloc_i2c, bloc_servos, bloc_led_etat, 
 
 
 def main():
+    ap = argparse.ArgumentParser(description=__doc__,
+                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--force", action="store_true",
+                    help="passer outre l'avertissement et reconstruire quand meme")
+    args = ap.parse_args()
+    if not args.force:
+        sys.exit("Ce script est perime : les blocs sont maintenant tenus a jour a la\n"
+                 "main dans KiCad. Le lancer effacerait ces modifications. Lisez\n"
+                 "l'en-tete du fichier, mettez BLOCS a jour si besoin, puis relancez\n"
+                 "avec --force pour confirmer.")
+
     cache = SymbolCache()
     if os.path.isdir(LIB):
         shutil.rmtree(LIB)
