@@ -61,8 +61,29 @@ def walk():
             yield os.path.join(dirpath, fn)
 
 
+def verifier_auteurs_git():
+    """L'adresse des commits est publique sur un depot public, on la controle aussi."""
+    import subprocess
+    try:
+        sortie = subprocess.run(
+            ["git", "log", "--format=%an <%ae>%n%cn <%ce>"],
+            cwd=ROOT, capture_output=True, text=True, timeout=30)
+    except (OSError, subprocess.SubprocessError):
+        return []
+    if sortie.returncode != 0:
+        return []
+    suspects = []
+    for ligne in {l.strip() for l in sortie.stdout.splitlines() if l.strip()}:
+        adresse = ligne.rsplit("<", 1)[-1].rstrip(">")
+        if adresse.endswith("users.noreply.github.com"):
+            continue
+        suspects.append(ligne)
+    return sorted(suspects)
+
+
 def main():
     findings, reviews = [], []
+    auteurs = verifier_auteurs_git()
     me = os.path.abspath(__file__)
     for path in walk():
         rel = os.path.relpath(path, ROOT)
@@ -94,13 +115,21 @@ def main():
             print(f"  {rel}:{lineno}  contient « {w} »")
         print()
 
-    if findings:
-        print(f"{len(findings)} donnée(s) personnelle(s) trouvée(s) :")
+    if auteurs:
+        print("Adresses personnelles dans l'historique Git (visibles publiquement) :")
+        for a in auteurs:
+            print(f"  {a}")
+        print("  Corriger avec : git config user.email "
+              "<identifiant>+<login>@users.noreply.github.com")
+        print()
+
+    if findings or auteurs:
+        print(f"{len(findings)} donnée(s) personnelle(s) trouvée(s) dans les fichiers :")
         for rel, lineno, label, value in findings:
             print(f"  {rel}:{lineno}  {label} : {value}")
         return 1
 
-    print("Aucune donnée personnelle trouvée.")
+    print("Aucune donnée personnelle trouvée, ni dans les fichiers ni dans l'historique Git.")
     return 0
 
 
