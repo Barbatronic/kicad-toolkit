@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Carte Barbatronic</title>
+  </head>
+  <body>
+    <h1>Carte Barbatronic</h1>
+
+    <p>
+      Point de départ pour une carte deux couches. Le projet arrive déjà réglé,
+      il n'y a plus qu'à poser les composants.
+    </p>
+
+    <h2>Ce qui est préréglé</h2>
+    <ul>
+      <li>Cartouche Barbatronic sur le schéma et sur le circuit imprimé.</li>
+      <li>
+        Quatre classes de nets : <b>Default</b> (0,25 mm), <b>Signal</b> (0,2 mm),
+        <b>Power</b> (0,5 mm) et <b>HighCurrent</b> (1,5 mm), chacune avec sa
+        couleur pour les repérer d'un coup d'oeil.
+      </li>
+      <li>
+        Contraintes de fabrication prudentes : isolation 0,15 mm, perçage
+        minimal 0,3 mm, cuivre à 0,3 mm du bord de carte.
+      </li>
+      <li>Largeurs de piste et tailles de via prêtes dans les listes déroulantes.</li>
+      <li>Contour de carte de 100 × 80 mm sur Edge.Cuts, à redimensionner.</li>
+      <li>Sortie de fabrication dirigée vers le sous-dossier <code>fab/</code>.</li>
+    </ul>
+
+    <h2>Après création du projet</h2>
+    <p>
+      Renseignez le titre, la révision et le sous-ensemble dans le cartouche, puis
+      copiez le jeu de règles de fabrication qui convient depuis le dossier
+      <code>design-rules</code> du toolkit vers le projet, sous le nom
+      <code>&lt;nom du projet&gt;.kicad_dru</code>.
+    </p>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://go.kicad.org/pcm/schemas/v1",
+  "name": "Barbatronic Toolkit - librairies tierces",
+  "description": "Librairies tierces que j'utilise régulièrement, redistribuées sous leur licence d'origine",
+  "description_full": "Complément au Barbatronic Toolkit. Rassemble les librairies que je n'ai pas créées mais qui reviennent dans mes cartes, redistribuées telles quelles sous leur licence d'origine : les empreintes RF de SparkFun (CC BY 4.0) et les empreintes Teensy de Ricardo Band (MIT).\n\nChaque licence est fournie dans le paquet. Les librairies dont la licence interdit la redistribution ne sont pas incluses, la documentation indique où les récupérer.",
+  "identifier": "com.github.barbatronic.kicad-toolkit-thirdparty",
+  "type": "library",
+  "author": {
+    "name": "SparkFun Electronics, Ricardo Band",
+    "contact": { "web": "https://github.com/Barbatronic/kicad-toolkit" }
+  },
+  "maintainer": {
+    "name": "Barbatronic",
+    "contact": { "web": "https://github.com/Barbatronic/kicad-toolkit" }
+  },
+  "license": "CC-BY-4.0",
+  "resources": {
+    "Documentation": "https://barbatronic.github.io/kicad-toolkit/librairies/tierces/",
+    "Sources": "https://github.com/Barbatronic/kicad-toolkit"
+  },
+  "tags": ["barbatronic", "sparkfun", "teensy", "rf", "xbee", "empreintes"],
+  "versions": []
+}

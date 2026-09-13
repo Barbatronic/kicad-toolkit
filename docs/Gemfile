@@ -1,0 +1,10 @@
+# Pour prévisualiser le site en local :
+#   cd docs && bundle install && bundle exec jekyll serve
+# La publication en ligne n'utilise pas ce fichier, elle passe par
+# l'action officielle GitHub Pages.
+source "https://rubygems.org"
+
+gem "github-pages", group: :jekyll_plugins
+gem "jekyll-remote-theme"
+gem "jekyll-seo-tag"
+gem "webrick"

@@ -1,0 +1,1022 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "03c2c9fa-6ac7-da3a-55bf-a2cf911f7532")
+	(paper "A4")
+	(lib_symbols
+		(symbol "Device:R"
+		(pin_numbers
+		(hide yes)
+		)
+		(pin_names
+		(offset 0)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(property "Reference" "R"
+		(at 2.032 0 90)
+		(effects
+		(font
+		(size 1.27 1.27)
+		)
+		)
+		)
+		(property "Value" "R"
+		(at 0 0 90)
+		(effects
+		(font
+		(size 1.27 1.27)
+		)
+		)
+		)
+		(property "Footprint" ""
+		(at -1.778 0 90)
+		(effects
+		(font
+		(size 1.27 1.27)
+		)
+		(hide yes)
+		)
+		)
+		(property "Datasheet" "~"
+		(at 0 0 0)
+		(effects
+		(font
+		(size 1.27 1.27)
+		)
+		(hide yes)
+		)
+		)
+		(property "Description" "Resistor"
+		(at 0 0 0)
+		(effects
+		(font
+		(size 1.27 1.27)
+		)
+		(hide yes)
+		)
+		)
+		(property "ki_keywords" "R res resistor"
+		(at 0 0 0)
+		(effects
+		(font
+		(size 1.27 1.27)
+		)
+		(hide yes)
+		)
+		)
+		(property "ki_fp_filters" "R_*"
+		(at 0 0 0)
+		(effects
+		(font
+		(size 1.27 1.27)
+		)
+		(hide yes)
+		)
+		)
+		(symbol "R_0_1"
+		(rectangle
+		(start -1.016 -2.54)
+		(end 1.016 2.54)
+		(stroke
+		(width 0.254)
+		(type default)
+		)
+		(fill
+		(type none)
+		)
+		)
+		)
+		(symbol "R_1_1"
+		(pin passive line
+		(at 0 3.81 270)
+		(length 1.27)
+		(name "~"
+		(effects
+		(font
+		(size 1.27 1.27)
+		)
+		)
+		)
+		(number "1"
+		(effects
+		(font
+		(size 1.27 1.27)
+		)
+		)
+		)
+		)
+		(pin passive line
+		(at 0 -3.81 90)
+		(length 1.27)
+		(name "~"
+		(effects
+		(font
+		(size 1.27 1.27)
+		)
+		)
+		)
+		(number "2"
+		(effects
+		(font
+		(size 1.27 1.27)
+		)
+		)
+		)
+		)
+		)
+		(embedded_fonts no)
+		)
+		(symbol "power:+3V3"
+		(power)
+		(pin_numbers
+		(hide yes)
+		)
+		(pin_names
+		(offset 0)
+		(hide yes)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(property "Reference" "#PWR"
+		(at 0 -3.81 0)
+		(effects
+		(font
+		(size 1.27 1.27)
+		)
+		(hide yes)
+		)
+		)
+		(property "Value" "+3V3"
+		(at 0 3.556 0)
+		(effects
+		(font
+		(size 1.27 1.27)
+		)
+		)
+		)
+		(property "Footprint" ""
+		(at 0 0 0)
+		(effects
+		(font
+		(size 1.27 1.27)
+		)
+		(hide yes)
+		)
+		)
+		(property "Datasheet" ""
+		(at 0 0 0)
+		(effects
+		(font
+		(size 1.27 1.27)
+		)
+		(hide yes)
+		)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+		(at 0 0 0)
+		(effects
+		(font
+		(size 1.27 1.27)
+		)
+		(hide yes)
+		)
+		)
+		(property "ki_keywords" "global power"
+		(at 0 0 0)
+		(effects
+		(font
+		(size 1.27 1.27)
+		)
+		(hide yes)
+		)
+		)
+		(symbol "+3V3_0_1"
+		(polyline
+		(pts
+		(xy -0.762 1.27) (xy 0 2.54)
+		)
+		(stroke
+		(width 0)
+		(type default)
+		)
+		(fill
+		(type none)
+		)
+		)
+		(polyline
+		(pts
+		(xy 0 2.54) (xy 0.762 1.27)
+		)
+		(stroke
+		(width 0)
+		(type default)
+		)
+		(fill
+		(type none)
+		)
+		)
+		(polyline
+		(pts
+		(xy 0 0) (xy 0 2.54)
+		)
+		(stroke
+		(width 0)
+		(type default)
+		)
+		(fill
+		(type none)
+		)
+		)
+		)
+		(symbol "+3V3_1_1"
+		(pin power_in line
+		(at 0 0 90)
+		(length 0)
+		(name "~"
+		(effects
+		(font
+		(size 1.27 1.27)
+		)
+		)
+		)
+		(number "1"
+		(effects
+		(font
+		(size 1.27 1.27)
+		)
+		)
+		)
+		)
+		)
+		(embedded_fonts no)
+		)
+		(symbol "Connector_Generic:Conn_01x04"
+		(pin_names
+		(offset 1.016)
+		(hide yes)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(property "Reference" "J"
+		(at 0 5.08 0)
+		(effects
+		(font
+		(size 1.27 1.27)
+		)
+		)
+		)
+		(property "Value" "Conn_01x04"
+		(at 0 -7.62 0)
+		(effects
+		(font
+		(size 1.27 1.27)
+		)
+		)
+		)
+		(property "Footprint" ""
+		(at 0 0 0)
+		(effects
+		(font
+		(size 1.27 1.27)
+		)
+		(hide yes)
+		)
+		)
+		(property "Datasheet" "~"
+		(at 0 0 0)
+		(effects
+		(font
+		(size 1.27 1.27)
+		)
+		(hide yes)
+		)
+		)
+		(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
+		(at 0 0 0)
+		(effects
+		(font
+		(size 1.27 1.27)
+		)
+		(hide yes)
+		)
+		)
+		(property "ki_keywords" "connector"
+		(at 0 0 0)
+		(effects
+		(font
+		(size 1.27 1.27)
+		)
+		(hide yes)
+		)
+		)
+		(property "ki_fp_filters" "Connector*:*_1x??_*"
+		(at 0 0 0)
+		(effects
+		(font
+		(size 1.27 1.27)
+		)
+		(hide yes)
+		)
+		)
+		(symbol "Conn_01x04_1_1"
+		(rectangle
+		(start -1.27 3.81)
+		(end 1.27 -6.35)
+		(stroke
+		(width 0.254)
+		(type default)
+		)
+		(fill
+		(type background)
+		)
+		)
+		(rectangle
+		(start -1.27 2.667)
+		(end 0 2.413)
+		(stroke
+		(width 0.1524)
+		(type default)
+		)
+		(fill
+		(type none)
+		)
+		)
+		(rectangle
+		(start -1.27 0.127)
+		(end 0 -0.127)
+		(stroke
+		(width 0.1524)
+		(type default)
+		)
+		(fill
+		(type none)
+		)
+		)
+		(rectangle
+		(start -1.27 -2.413)
+		(end 0 -2.667)
+		(stroke
+		(width 0.1524)
+		(type default)
+		)
+		(fill
+		(type none)
+		)
+		)
+		(rectangle
+		(start -1.27 -4.953)
+		(end 0 -5.207)
+		(stroke
+		(width 0.1524)
+		(type default)
+		)
+		(fill
+		(type none)
+		)
+		)
+		(pin passive line
+		(at -5.08 2.54 0)
+		(length 3.81)
+		(name "Pin_1"
+		(effects
+		(font
+		(size 1.27 1.27)
+		)
+		)
+		)
+		(number "1"
+		(effects
+		(font
+		(size 1.27 1.27)
+		)
+		)
+		)
+		)
+		(pin passive line
+		(at -5.08 0 0)
+		(length 3.81)
+		(name "Pin_2"
+		(effects
+		(font
+		(size 1.27 1.27)
+		)
+		)
+		)
+		(number "2"
+		(effects
+		(font
+		(size 1.27 1.27)
+		)
+		)
+		)
+		)
+		(pin passive line
+		(at -5.08 -2.54 0)
+		(length 3.81)
+		(name "Pin_3"
+		(effects
+		(font
+		(size 1.27 1.27)
+		)
+		)
+		)
+		(number "3"
+		(effects
+		(font
+		(size 1.27 1.27)
+		)
+		)
+		)
+		)
+		(pin passive line
+		(at -5.08 -5.08 0)
+		(length 3.81)
+		(name "Pin_4"
+		(effects
+		(font
+		(size 1.27 1.27)
+		)
+		)
+		)
+		(number "4"
+		(effects
+		(font
+		(size 1.27 1.27)
+		)
+		)
+		)
+		)
+		)
+		(embedded_fonts no)
+		)
+		(symbol "power:GND"
+		(power)
+		(pin_numbers
+		(hide yes)
+		)
+		(pin_names
+		(offset 0)
+		(hide yes)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(property "Reference" "#PWR"
+		(at 0 -6.35 0)
+		(effects
+		(font
+		(size 1.27 1.27)
+		)
+		(hide yes)
+		)
+		)
+		(property "Value" "GND"
+		(at 0 -3.81 0)
+		(effects
+		(font
+		(size 1.27 1.27)
+		)
+		)
+		)
+		(property "Footprint" ""
+		(at 0 0 0)
+		(effects
+		(font
+		(size 1.27 1.27)
+		)
+		(hide yes)
+		)
+		)
+		(property "Datasheet" ""
+		(at 0 0 0)
+		(effects
+		(font
+		(size 1.27 1.27)
+		)
+		(hide yes)
+		)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+		(at 0 0 0)
+		(effects
+		(font
+		(size 1.27 1.27)
+		)
+		(hide yes)
+		)
+		)
+		(property "ki_keywords" "global power"
+		(at 0 0 0)
+		(effects
+		(font
+		(size 1.27 1.27)
+		)
+		(hide yes)
+		)
+		)
+		(symbol "GND_0_1"
+		(polyline
+		(pts
+		(xy 0 0) (xy 0 -1.27) (xy 1.27 -1.27) (xy 0 -2.54) (xy -1.27 -1.27) (xy 0 -1.27)
+		)
+		(stroke
+		(width 0)
+		(type default)
+		)
+		(fill
+		(type none)
+		)
+		)
+		)
+		(symbol "GND_1_1"
+		(pin power_in line
+		(at 0 0 270)
+		(length 0)
+		(name "~"
+		(effects
+		(font
+		(size 1.27 1.27)
+		)
+		)
+		)
+		(number "1"
+		(effects
+		(font
+		(size 1.27 1.27)
+		)
+		)
+		)
+		)
+		)
+		(embedded_fonts no)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 121.92 78.74 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f08218db-66dc-e2b5-9c91-310c59f41a62")
+		(property "Reference" "R1"
+			(at 122.047 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "4k7"
+			(at 122.047 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 121.92 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 121.92 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 132.08 78.74 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "baf8b943-fccd-7ad1-fc4a-b179928f3648")
+		(property "Reference" "R2"
+			(at 132.207 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "4k7"
+			(at 132.207 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 132.08 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 132.08 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 127 66.04 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8e16024a-66f6-1468-706a-cc3fc1236de8")
+		(property "Reference" "#PWRBUS2"
+			(at 127.0 59.944 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 127.0 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 127 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 127 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 121.92 74.93) (xy 121.92 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5412831d-8bec-5237-da60-718f17882c4f")
+	)
+	(wire
+		(pts
+			(xy 121.92 71.12) (xy 127 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b0ddfe35-6b20-2f35-68be-ef63301b7649")
+	)
+	(wire
+		(pts
+			(xy 127 71.12) (xy 127 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6f00db07-9d64-5f62-2521-540e205f02b7")
+	)
+	(wire
+		(pts
+			(xy 132.08 74.93) (xy 132.08 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d9a2603c-a380-f0ab-48a5-078a88ddd82f")
+	)
+	(wire
+		(pts
+			(xy 132.08 71.12) (xy 127 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7a264091-63e8-6ade-c28a-cbdb076346a4")
+	)
+	(junction
+		(at 127 71.12)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9687a31d-eedd-0209-432f-93f79fdb18b7")
+	)
+	(wire
+		(pts
+			(xy 121.92 82.55) (xy 121.92 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "861bccce-8b31-8663-5203-10e0854b7c35")
+	)
+	(wire
+		(pts
+			(xy 121.92 88.9) (xy 109.22 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cc1cbd79-a622-9ea4-c06b-bfba7ffc66f1")
+	)
+	(global_label
+		"SDA"
+		(at 109.22 88.9 0)
+		(shape input)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "9494c658-25d0-16a2-e531-ea705819118f")
+	)
+	(wire
+		(pts
+			(xy 132.08 82.55) (xy 132.08 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "37648acc-9231-40a5-591b-d2c28e839e2e")
+	)
+	(wire
+		(pts
+			(xy 132.08 93.98) (xy 109.22 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "90723a5e-5515-5b0a-c9fb-f7f6703a46c7")
+	)
+	(global_label
+		"SCL"
+		(at 109.22 93.98 0)
+		(shape input)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "b30c4be5-6e71-728c-0140-44efa5d4f687")
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x04")
+		(at 149.86 88.9 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ab1aebc2-5f48-878c-d25b-113cab788fb7")
+		(property "Reference" "J1"
+			(at 147.955 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "I2C"
+			(at 147.955 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical"
+			(at 149.86 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 149.86 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 144.78 86.36) (xy 139.7 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0b1b1c64-c676-2ac7-0b7d-67a154e77b86")
+	)
+	(wire
+		(pts
+			(xy 139.7 86.36) (xy 139.7 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5c7930c8-84e8-7d28-f5fa-23e4fc849909")
+	)
+	(wire
+		(pts
+			(xy 139.7 71.12) (xy 127 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d1f999ef-01fc-0608-e19a-269b057d8019")
+	)
+	(wire
+		(pts
+			(xy 144.78 88.9) (xy 144.78 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "be30ebd5-1d19-5468-3e42-9548f042be3c")
+	)
+	(wire
+		(pts
+			(xy 144.78 88.9) (xy 139.7 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3298dff7-73b6-af26-d29f-70bd645fe93b")
+	)
+	(wire
+		(pts
+			(xy 144.78 91.44) (xy 144.78 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0499fb68-5b6e-daa7-7ea9-a785ce010f3b")
+	)
+	(wire
+		(pts
+			(xy 144.78 93.98) (xy 132.08 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fe924253-02f5-4c55-4894-b90bbdb59e3c")
+	)
+	(junction
+		(at 132.08 93.98)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a65a9bf1-76b6-d14f-d3f1-296b826a3307")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 144.78 101.6 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "675830c1-d0e5-9ec5-6868-316662969a6a")
+		(property "Reference" "#PWRBUS24"
+			(at 144.78 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 144.78 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 144.78 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 144.78 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 144.78 93.98) (xy 144.78 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8016f478-b7a1-e056-7884-9b3217333d52")
+	)
+	(wire
+		(pts
+			(xy 144.78 96.52) (xy 144.78 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ab2c1dd5-d9c7-f390-57f8-2ae1b7f4e266")
+	)
+	(text
+		"Bus I2C : tirages 4k7 vers 3,3 V et connecteur 4 points"
+		(exclude_from_sim no)
+		(at 106.68 63.5 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "f0eb1b56-8eae-7976-8a65-c0682475de2b")
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)

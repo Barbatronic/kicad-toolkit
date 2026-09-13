@@ -1,0 +1,123 @@
+name: Publication
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version à publier, par exemple 1.0.0"
+        required: true
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: publication
+  cancel-in-progress: false
+
+jobs:
+  construire:
+    name: Construire les paquets et le site
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Déterminer la version
+        id: version
+        run: |
+          if [ -n "${{ github.event.inputs.version }}" ]; then
+            v="${{ github.event.inputs.version }}"
+          else
+            v="${GITHUB_REF_NAME#v}"
+          fi
+          echo "valeur=$v" >> "$GITHUB_OUTPUT"
+          echo "Version à publier : $v"
+
+      - name: Installer KiCad
+        run: |
+          sudo add-apt-repository --yes ppa:kicad/kicad-9.0-releases
+          sudo apt-get update
+          sudo apt-get install --yes --no-install-recommends kicad kicad-symbols kicad-footprints
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - run: pip install jsonschema
+
+      - name: Rechercher des données personnelles
+        run: python3 tools/check_privacy.py
+
+      - name: Récupérer le dépôt déjà publié
+        run: |
+          mkdir -p ancien
+          if curl -sfL -o ancien/packages.json \
+              "https://barbatronic.github.io/kicad-toolkit/packages.json"; then
+            echo "historique des versions récupéré"
+          else
+            echo "aucune publication antérieure, premier dépôt"
+            rm -f ancien/packages.json
+          fi
+
+      - name: Construire les paquets
+        run: |
+          args=(--version "${{ steps.version.outputs.valeur }}")
+          [ -f ancien/packages.json ] && args+=(--previous ancien/packages.json)
+          python3 tools/build_pcm.py "${args[@]}"
+
+      - name: Valider le dépôt
+        run: python3 tools/valider_pcm.py
+
+      - name: Produire le catalogue illustré
+        run: python3 tools/make_gallery.py
+
+      - name: Assembler le site
+        run: |
+          cp dist/repository.json dist/packages.json dist/resources.zip docs/
+          echo "Site prêt :"
+          ls -la docs/repository.json docs/packages.json docs/resources.zip
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./docs
+          destination: ./_site
+
+      - uses: actions/upload-pages-artifact@v3
+
+      - name: Publier la release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*.zip
+          generate_release_notes: true
+          body: |
+            ## Installation
+
+            Dans KiCad, **Plugin and Content Manager**, liste des dépôts, **Manage...**,
+            puis ajoutez :
+
+            ```
+            https://barbatronic.github.io/kicad-toolkit/repository.json
+            ```
+
+            Si le dépôt est déjà configuré, la mise à jour est proposée directement
+            dans le gestionnaire.
+
+            Les archives ci-dessous s'installent aussi à la main, par
+            **Install from File**.
+
+  deployer:
+    name: Mettre le site en ligne
+    needs: construire
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.pages.outputs.page_url }}
+    steps:
+      - id: pages
+        uses: actions/deploy-pages@v4

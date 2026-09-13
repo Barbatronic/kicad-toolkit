@@ -1,0 +1,23 @@
+{
+  "$schema": "https://go.kicad.org/pcm/schemas/v1",
+  "name": "Barbatronic Toolkit",
+  "description": "Symboles, empreintes, modèles 3D, blocs de conception, cartouche et modèle de projet Barbatronic",
+  "description_full": "Le nécessaire que j'utilise sur mes cartes : mes symboles et empreintes maison rangés par thème (microcontrôleurs, alimentation, motorisation, capteurs, connectique, interface, mécanique), leurs modèles 3D, des blocs de conception prêts à poser dans un schéma, mon cartouche, mes jeux de règles de conception par fabricant et un modèle de projet préréglé.\n\nLes empreintes viennent de mes cartes de robotique et d'électronique des dernières années, remises au propre et renommées de façon cohérente.",
+  "identifier": "com.github.barbatronic.kicad-toolkit",
+  "type": "library",
+  "author": {
+    "name": "Barbatronic",
+    "contact": { "web": "https://github.com/Barbatronic" }
+  },
+  "maintainer": {
+    "name": "Barbatronic",
+    "contact": { "web": "https://github.com/Barbatronic/kicad-toolkit" }
+  },
+  "license": "MIT",
+  "resources": {
+    "Documentation": "https://barbatronic.github.io/kicad-toolkit/",
+    "Sources": "https://github.com/Barbatronic/kicad-toolkit"
+  },
+  "tags": ["barbatronic", "robotique", "esp32", "moteur", "alimentation", "empreintes", "symboles", "blocs"],
+  "versions": []
+}

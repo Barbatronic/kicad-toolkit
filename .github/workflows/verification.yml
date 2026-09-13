@@ -1,0 +1,111 @@
+name: Vérification
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  verifier:
+    name: Contrôles du dépôt
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Installer KiCad
+        run: |
+          sudo add-apt-repository --yes ppa:kicad/kicad-9.0-releases
+          sudo apt-get update
+          sudo apt-get install --yes --no-install-recommends kicad kicad-symbols kicad-footprints
+          kicad-cli version
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Installer les dépendances Python
+        run: pip install jsonschema
+
+      - name: Rechercher des données personnelles
+        run: python3 tools/check_privacy.py
+
+      - name: Vérifier que les librairies de symboles se chargent
+        run: |
+          echec=0
+          for f in packages/*/symbols/*.kicad_sym; do
+            if kicad-cli sym export svg -o "$RUNNER_TEMP/sym" "$f" > /dev/null 2>&1; then
+              echo "  OK   $f"
+            else
+              echo "  ÉCHEC $f"; echec=1
+            fi
+          done
+          exit $echec
+
+      - name: Vérifier que les librairies d'empreintes se chargent
+        run: |
+          echec=0
+          for d in packages/*/footprints/*.pretty; do
+            if kicad-cli fp export svg -o "$RUNNER_TEMP/fp" "$d" > /dev/null 2>&1; then
+              echo "  OK   $d"
+            else
+              echo "  ÉCHEC $d"; echec=1
+            fi
+          done
+          exit $echec
+
+      - name: Vérifier que les blocs de conception se chargent
+        run: |
+          echec=0
+          for b in packages/*/resources/design-blocks/*.kicad_blocks/*.kicad_block; do
+            nom=$(basename "$b" .kicad_block)
+            if kicad-cli sch export svg -o "$RUNNER_TEMP/blk" "$b/$nom.kicad_sch" > /dev/null 2>&1; then
+              echo "  OK   $nom"
+            else
+              echo "  ÉCHEC $nom"; echec=1
+            fi
+            test -f "$b/$nom.json" || { echo "  ÉCHEC $nom : fiche JSON manquante"; echec=1; }
+          done
+          exit $echec
+
+      - name: Vérifier le modèle de projet
+        run: |
+          cd packages/barbatronic-kicad-toolkit/templates/Barbatronic_Carte
+          python3 -c "import json; json.load(open('Barbatronic_Carte.kicad_pro'))"
+          kicad-cli sch export svg -o "$RUNNER_TEMP/tpl" Barbatronic_Carte.kicad_sch
+          kicad-cli pcb drc -o "$RUNNER_TEMP/tpl.rpt" Barbatronic_Carte.kicad_pcb
+          test -f meta/info.html && test -f meta/icon.png
+
+      - name: Vérifier les règles de conception
+        run: |
+          cd packages/barbatronic-kicad-toolkit/templates/Barbatronic_Carte
+          echec=0
+          for r in ../../resources/design-rules/*.kicad_dru; do
+            cp "$r" Barbatronic_Carte.kicad_dru
+            if kicad-cli pcb drc -o "$RUNNER_TEMP/dru.rpt" Barbatronic_Carte.kicad_pcb > /dev/null 2>&1; then
+              echo "  OK   $(basename "$r")"
+            else
+              echo "  ÉCHEC $(basename "$r")"; echec=1
+            fi
+          done
+          rm -f Barbatronic_Carte.kicad_dru
+          exit $echec
+
+      - name: Vérifier le thème de couleurs
+        run: |
+          python3 - <<'PY'
+          import json, sys
+          d = json.load(open("packages/barbatronic-kicad-theme/colors/Barbatronic.json"))
+          manquants = [k for k in ("meta", "schematic", "board") if k not in d]
+          if manquants:
+              sys.exit(f"sections manquantes dans le thème : {manquants}")
+          if d["meta"].get("name") != "Barbatronic":
+              sys.exit("le nom du thème doit rester « Barbatronic »")
+          print("thème conforme :", len(d["schematic"]), "couleurs de schéma,",
+                len(d["board"]), "couleurs de circuit")
+          PY
+
+      - name: Construire le dépôt PCM et le valider
+        run: |
+          python3 tools/build_pcm.py --version 0.0.1
+          python3 tools/valider_pcm.py

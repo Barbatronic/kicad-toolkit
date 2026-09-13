@@ -1,0 +1,216 @@
+(footprint "RF-LINK_TX"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(descr "RF LINK TRANSMITTER, PTH PACKAGE")
+	(tags "RF LINK TRANSMITTER, PTH PACKAGE")
+	(property "Reference" ">NAME"
+		(at 0 -2.667 0)
+		(layer "F.SilkS")
+		(uuid "e34cde40-70f0-4649-9be3-500d9beb6123")
+		(effects
+			(font
+				(size 0.6096 0.6096)
+				(thickness 0.127)
+			)
+		)
+	)
+	(property "Value" ">VALUE"
+		(at 0 4.064 0)
+		(layer "F.SilkS")
+		(uuid "34baa483-9166-42ff-ba38-9f83d9a4e7fa")
+		(effects
+			(font
+				(size 0.6096 0.6096)
+				(thickness 0.127)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "afa550bb-62d7-4577-abf3-819f2ca9873a")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "fcfc74d6-9185-471a-8e44-52763f0a40bd")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr exclude_from_pos_files exclude_from_bom)
+	(fp_line
+		(start -5.35178 -2.12598)
+		(end -5.35178 3.42646)
+		(stroke
+			(width 0.2032)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "aa3c68ce-246c-4d5b-9916-2d0b7c47aa68")
+	)
+	(fp_line
+		(start -5.35178 3.42646)
+		(end 5.35178 3.42646)
+		(stroke
+			(width 0.2032)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "e77ca32a-1e72-40d2-bce1-7506a5f72622")
+	)
+	(fp_line
+		(start 5.35178 -2.12598)
+		(end -5.35178 -2.12598)
+		(stroke
+			(width 0.2032)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "6b1162b5-7d8e-4e95-9d6c-6b290a87746c")
+	)
+	(fp_line
+		(start 5.35178 3.42646)
+		(end 5.35178 -2.12598)
+		(stroke
+			(width 0.2032)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "be5ced6a-76fc-4e49-b10b-79f87a659f82")
+	)
+	(fp_line
+		(start -5.22478 -1.99898)
+		(end -5.22478 3.29946)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "Dwgs.User")
+		(uuid "7ac1ff05-2a0f-4d8f-a1bf-27adb4679ea1")
+	)
+	(fp_line
+		(start -5.22478 3.29946)
+		(end 5.22478 3.29946)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "Dwgs.User")
+		(uuid "0a00a48b-c27d-4cdb-b3ec-fc66d9519ad2")
+	)
+	(fp_line
+		(start 5.22478 -1.99898)
+		(end -5.22478 -1.99898)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "Dwgs.User")
+		(uuid "99a44d89-d019-4461-bde0-6cbf985ed419")
+	)
+	(fp_line
+		(start 5.22478 3.29946)
+		(end 5.22478 -1.99898)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "Dwgs.User")
+		(uuid "5c9c8b69-2482-4a24-8c8c-99967f913fe2")
+	)
+	(fp_text user "GND"
+		(at -3.8354 2.0828 90)
+		(layer "F.SilkS")
+		(uuid "0d4cf97e-1ea5-422f-a7b5-0341feb43639")
+		(effects
+			(font
+				(size 0.8128 0.8128)
+				(thickness 0.127)
+			)
+		)
+	)
+	(fp_text user "VCC"
+		(at 1.2446 2.0828 90)
+		(layer "F.SilkS")
+		(uuid "5f07de46-4efe-4f2b-b4f8-f8e1efcd5a51")
+		(effects
+			(font
+				(size 0.8128 0.8128)
+				(thickness 0.127)
+			)
+		)
+	)
+	(fp_text user "ANT"
+		(at 3.7846 2.0828 90)
+		(layer "F.SilkS")
+		(uuid "cb4a94db-92ff-4688-92a5-5875d0873cfe")
+		(effects
+			(font
+				(size 0.8128 0.8128)
+				(thickness 0.127)
+			)
+		)
+	)
+	(fp_text user "DIN"
+		(at -1.2954 2.2098 90)
+		(layer "F.SilkS")
+		(uuid "e307cd2e-2a1f-4cde-840a-b4e8a7aef5dc")
+		(effects
+			(font
+				(size 0.8128 0.8128)
+				(thickness 0.127)
+			)
+		)
+	)
+	(pad "ANT" thru_hole circle
+		(at 3.81 0.127)
+		(size 1.8796 1.8796)
+		(drill 1.016)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(solder_mask_margin 0.1016)
+		(uuid "b52b7aa4-5b0b-47b3-9b9e-d9dbbfc6e1f0")
+	)
+	(pad "DATA" thru_hole circle
+		(at -1.27 0.127)
+		(size 1.8796 1.8796)
+		(drill 1.016)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(solder_mask_margin 0.1016)
+		(uuid "de6e8dc1-2200-4066-b2c0-1ee4a75dea84")
+	)
+	(pad "GND" thru_hole rect
+		(at -3.81 -0.127)
+		(size 1.8796 1.8796)
+		(drill 1.016)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(solder_mask_margin 0.1016)
+		(uuid "500e3e4f-9782-4550-9623-676d9ea199f1")
+	)
+	(pad "VCC" thru_hole circle
+		(at 1.27 -0.127)
+		(size 1.8796 1.8796)
+		(drill 1.016)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(solder_mask_margin 0.1016)
+		(uuid "4c8f520c-3e2a-4fde-be22-e670d596debe")
+	)
+	(embedded_fonts no)
+)

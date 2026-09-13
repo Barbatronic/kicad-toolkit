@@ -1,0 +1,5 @@
+{
+ "description": "LED d'etat avec resistance de limitation, pilotee par une sortie logique",
+ "keywords": "LED etat temoin indicateur resistance sortie logique",
+ "fields": {}
+}

@@ -1,0 +1,50 @@
+title: Barbatronic KiCad Toolkit
+description: Mes librairies, blocs de conception et réglages KiCad, installables depuis le gestionnaire de contenu
+url: https://barbatronic.github.io
+baseurl: /kicad-toolkit
+lang: fr
+
+remote_theme: just-the-docs/just-the-docs@v0.10.1
+
+plugins:
+  - jekyll-remote-theme
+  - jekyll-seo-tag
+
+color_scheme: barbatronic
+search_enabled: true
+search:
+  heading_level: 3
+  previews: 3
+  rel_url: true
+
+heading_anchors: true
+nav_external_links:
+  - title: Le dépôt sur GitHub
+    url: https://github.com/Barbatronic/kicad-toolkit
+
+aux_links:
+  GitHub:
+    - https://github.com/Barbatronic/kicad-toolkit
+aux_links_new_tab: true
+
+back_to_top: true
+back_to_top_text: Revenir en haut
+
+footer_content: >-
+  Barbatronic - librairies sous licence MIT.
+  Les librairies tierces redistribuées gardent leur licence d'origine.
+
+last_edit_timestamp: true
+last_edit_time_format: "%d/%m/%Y"
+
+gh_edit_link: true
+gh_edit_link_text: Corriger cette page sur GitHub
+gh_edit_repository: https://github.com/Barbatronic/kicad-toolkit
+gh_edit_branch: main
+gh_edit_source: docs
+gh_edit_view_mode: tree
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor

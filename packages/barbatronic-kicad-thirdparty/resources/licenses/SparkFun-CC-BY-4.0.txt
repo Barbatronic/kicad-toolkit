@@ -1,0 +1,14 @@
+Empreintes ThirdParty_SparkFun_RF
+=================================
+
+Source   : SparkFun Electronics - SparkFun KiCad Libraries
+Dépôt    : https://github.com/sparkfun/SparkFun-KiCad-Libraries
+Licence  : Creative Commons Attribution 4.0 International (CC BY 4.0)
+Texte    : https://creativecommons.org/licenses/by/4.0/legalcode
+
+SparkFun autorise explicitement l'usage commercial de ces empreintes.
+Attribution demandée : mentionner SparkFun Electronics comme auteur d'origine.
+
+Ces fichiers sont redistribués tels quels, sans modification de la géométrie
+des empreintes. Seul le nom de la librairie a été préfixé pour éviter les
+collisions de noms dans la table des librairies KiCad.

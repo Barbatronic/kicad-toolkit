@@ -1,0 +1,5 @@
+{
+ "description": "Bus I2C avec resistances de tirage 4k7 et connecteur 4 points",
+ "keywords": "I2C SDA SCL bus tirage pullup connecteur capteur",
+ "fields": {}
+}

@@ -1,0 +1,46 @@
+(version 1)
+
+# Règles de conception pour AISLER, 2 couches, cuivre 35 µm, finition HASL.
+# Piste / isolation 200 µm / 150 µm, perçage minimal 0,3 mm.
+# Règles relevées sur https://community.aisler.net/t/pcb-design-rules/41
+
+(rule "Largeur de piste minimale"
+	(constraint track_width (min 0.2mm))
+	(layer outer))
+
+(rule "Isolation cuivre minimale"
+	(constraint clearance (min 0.15mm))
+	(layer outer))
+
+(rule "Diamètre de perçage des vias"
+	(constraint hole_size (min 0.3mm))
+	(condition "A.Type == 'Via'"))
+
+(rule "Diamètre extérieur des vias"
+	(constraint via_diameter (min 0.6mm))
+	(condition "A.Type == 'Via'"))
+
+(rule "Couronne de via minimale"
+	(constraint annular_width (min 0.15mm))
+	(condition "A.Type == 'Via'"))
+
+(rule "Perçage des trous traversants"
+	(constraint hole_size (min 0.3mm))
+	(condition "A.Type == 'Pad' && A.isPlated()"))
+
+(rule "Écart entre perçages"
+	(constraint hole_to_hole (min 0.5mm)))
+
+(rule "Cuivre au bord de carte"
+	(constraint edge_clearance (min 0.3mm)))
+
+(rule "Sérigraphie sur pastille"
+	(constraint silk_clearance (min 0.15mm)))
+
+(rule "Hauteur de texte de sérigraphie"
+	(constraint text_height (min 1mm))
+	(layer "?.Silkscreen"))
+
+(rule "Épaisseur de texte de sérigraphie"
+	(constraint text_thickness (min 0.15mm))
+	(layer "?.Silkscreen"))
