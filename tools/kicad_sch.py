@@ -401,3 +401,46 @@ def to_kicad9(text):
             p -= 1
         text = text[:p] + text[e:]
     return text
+
+
+# -- Edition de librairies de symboles deja existantes (fichiers .kicad_sym) --
+# A la difference de SymbolCache, qui resout des lib_id depuis les librairies
+# officielles pour construire un schema, ces fonctions decoupent et modifient
+# un fichier de librairie donne sans en reformater le contenu.
+
+def split_symbols(text):
+    """Retourne [(nom, bloc)] pour les symboles de premier niveau d'un .kicad_sym."""
+    out = []
+    for d, s, e in _scan(text):
+        if d != 1:
+            continue
+        m = re.match(r'\(\s*symbol\s+"((?:[^"\\]|\\.)*)"', text[s:e])
+        if m:
+            out.append((m.group(1), text[s:e]))
+    out.sort(key=lambda x: text.find(x[1]))
+    return out
+
+
+def rename(block, old, new):
+    """Renomme un symbole et ses sous-unites <old>_<u>_<v>."""
+    o = re.escape(old)
+    block = re.sub(r'(\(\s*symbol\s+")' + o + r'(")', r'\g<1>' + new + r'\g<2>', block, count=1)
+    block = re.sub(r'(\(\s*symbol\s+")' + o + r'(_\d+_\d+")', r'\g<1>' + new + r'\g<2>', block)
+    block = re.sub(r'(\(\s*extends\s+")' + o + r'(")', r'\g<1>' + new + r'\g<2>', block)
+    return block
+
+
+def set_property(block, name, value):
+    """Remplace la valeur d'une propriete de premier niveau du symbole."""
+    pat = re.compile(r'(\(\s*property\s+"' + re.escape(name) + r'"\s+)"(?:[^"\\]|\\.)*"')
+    if pat.search(block):
+        return pat.sub(lambda m: m.group(1) + '"' + value.replace('\\', '\\\\').replace('"', '\\"') + '"',
+                       block, count=1)
+    return block
+
+
+def build_symbol_lib(blocks, version="20241209"):
+    """Assemble une liste de blocs (symbol ...) en un fichier .kicad_sym complet."""
+    body = "\n".join(b.rstrip() for b in blocks)
+    return ('(kicad_symbol_lib\n\t(version %s)\n\t(generator "kicad_symbol_editor")\n'
+            '\t(generator_version "9.0")\n%s\n)\n' % (version, body))

@@ -1,4 +1,4 @@
-(footprint "MOUDLE23P-XIAO-HALF-HOLE" (version 20240108) (generator "pcbnew") (generator_version "8.0")
+(footprint "MOUDLE23P-SMD-2.54-21X17.8MM" (version 20240108) (generator "pcbnew") (generator_version "8.0")
   (layer "F.Cu")
   (property "Reference" "U2" (at 0 -0.9525 0)(unlocked yes)
  (layer "F.SilkS")(uuid "e89beb02-8063-4854-a345-1183e89cc38f")

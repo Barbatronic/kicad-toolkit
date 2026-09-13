@@ -17,6 +17,7 @@ collisions dans la table des librairies de KiCad.
 | `ThirdParty_TMC_StepStick` | via SnapEDA | voir ci-dessous | [snapeda.com](https://www.snapeda.com/) |
 | `ThirdParty_DFRobot` | DFRobot, via SnapEDA | voir ci-dessous | [snapeda.com](https://www.snapeda.com/) |
 | `ThirdParty_Arduino` | Projet KiCad | CC BY-SA 4.0 avec exception | modèle de projet Arduino livré avec KiCad |
+| `ThirdParty_RS` | RS Components | non précisée | export CAO du site RS Components (référence RS PRO 185-4727) |
 
 ## Modifications apportées
 

@@ -9,7 +9,7 @@
     (property "Value" "DFR0299" (id 1) (at -10.16 -22.86 0)
       (effects (font (size 1.27 1.27)) (justify bottom left))
     )
-    (property "Footprint" "DFR0299:MODULE_DFR0299" (id 2) (at 0 0 0)
+    (property "Footprint" "PCM_ThirdParty_DFRobot:MODULE_DFR0299" (id 2) (at 0 0 0)
       (effects (font (size 1.27 1.27)) (justify bottom) hide)
     )
     (property "MF" "DFRobot" (id 4) (at 0 0 0)

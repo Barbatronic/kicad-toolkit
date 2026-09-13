@@ -24,7 +24,7 @@
 				(justify left top)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "PCM_Barbatronic_MCU:ESP32-C3-Zero_Castellated"
 			(at 0 0 0)
 			(effects
 				(font
@@ -435,7 +435,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "PCM_Barbatronic_MCU:ESP32-S3-UNO"
 			(at 0 -57.15 0)
 			(hide yes)
 			(effects
@@ -1071,7 +1071,7 @@
 				(justify left top)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "PCM_Barbatronic_MCU:ESP32-S3-Zero_Castellated"
 			(at 0 0 0)
 			(effects
 				(font

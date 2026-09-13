@@ -28,3 +28,6 @@ Thumbs.db
 # Python
 __pycache__/
 *.pyc
+
+# Historique local d'editeur (VSCode Local History)
+.history/

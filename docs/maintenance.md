@@ -129,6 +129,12 @@ librairies officielles de KiCad et retire les chemins morts. Sans lui, une
 empreinte peut publier l'arborescence de la machine sur laquelle elle a été faite,
 ce qui est déjà arrivé.
 
+Il ne redirige que si le nom de fichier du modèle référencé correspond
+exactement à celui du modèle copié dans `3dmodels/`. Si un modèle est renommé
+au passage (ce que fait `collect_symbols_footprints.py` pour certains
+composants), corrigez la référence à la main après coup : `grep -rn "(model"
+packages/*/footprints/*.pretty/*.kicad_mod` pour les repérer.
+
 ## Prévisualiser la documentation en local
 
 ```bash
