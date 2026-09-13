@@ -13,13 +13,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Installer KiCad
-        run: |
-          sudo add-apt-repository --yes ppa:kicad/kicad-10.0-releases
-          sudo apt-get update
-          sudo apt-get install --yes --no-install-recommends kicad kicad-symbols kicad-footprints
-          kicad-cli version
-
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -29,6 +22,16 @@ jobs:
 
       - name: Rechercher des données personnelles
         run: python3 tools/check_privacy.py
+
+      - name: Vérifier la cohérence des librairies de symboles
+        run: python3 tools/check_symbols.py
+
+      - name: Installer KiCad
+        run: |
+          sudo add-apt-repository --yes ppa:kicad/kicad-10.0-releases
+          sudo apt-get update
+          sudo apt-get install --yes --no-install-recommends kicad kicad-symbols kicad-footprints
+          kicad-cli version
 
       - name: Vérifier que les librairies de symboles se chargent
         run: |

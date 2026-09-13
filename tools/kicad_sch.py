@@ -422,11 +422,17 @@ def split_symbols(text):
 
 
 def rename(block, old, new):
-    """Renomme un symbole et ses sous-unites <old>_<u>_<v>."""
+    """Renomme un symbole et ses sous-unites <old>_<u>_<v>.
+
+    `old` peut etre le nom complet "Lib:Nom" (cas d'un symbole tire d'un cache
+    lib_symbols de schema) : seul le nom racine porte ce prefixe, les
+    sous-unites gardent le nom nu, sans le prefixe de librairie.
+    """
     o = re.escape(old)
+    bare = re.escape(old.rsplit(":", 1)[-1])
     block = re.sub(r'(\(\s*symbol\s+")' + o + r'(")', r'\g<1>' + new + r'\g<2>', block, count=1)
-    block = re.sub(r'(\(\s*symbol\s+")' + o + r'(_\d+_\d+")', r'\g<1>' + new + r'\g<2>', block)
-    block = re.sub(r'(\(\s*extends\s+")' + o + r'(")', r'\g<1>' + new + r'\g<2>', block)
+    block = re.sub(r'(\(\s*symbol\s+")' + bare + r'(_\d+_\d+")', r'\g<1>' + new + r'\g<2>', block)
+    block = re.sub(r'(\(\s*extends\s+")' + bare + r'(")', r'\g<1>' + new + r'\g<2>', block)
     return block
 
 

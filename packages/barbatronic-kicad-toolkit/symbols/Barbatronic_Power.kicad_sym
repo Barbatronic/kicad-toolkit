@@ -215,7 +215,7 @@
 					(justify left)
 				)
 			)
-			(symbol "D36V50F5_0_0"
+			(symbol "Pololu_D36V50F5_0_0"
 				(pin passive line
 					(at 0 0 0)
 					(length 5.08)
@@ -487,7 +487,7 @@
 					)
 				)
 			)
-			(symbol "D36V50F5_0_1"
+			(symbol "Pololu_D36V50F5_0_1"
 				(polyline
 					(pts
 						(xy 5.08 2.54) (xy 27.94 2.54) (xy 27.94 -20.32) (xy 5.08 -20.32) (xy 5.08 2.54)
